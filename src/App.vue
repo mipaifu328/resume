@@ -20,6 +20,7 @@
        <v-contact/>
       </div>
     </full-page>
+    <div class="arrow" v-show="isLast"></div>
   </div>
 </template>
 
@@ -40,9 +41,11 @@ export default {
     return {
       options: {
         navigation: true,
-        anchors: ['default', 'info', 'experience', 'works', 'skill', 'contact'],
-        sectionsColor: ['#87b0a5', '#109085', '#945c4c', '#4b85a0', '#4d5e8f', '#a29971']
-      }
+        // anchors: ['default', 'info', 'experience', 'works', 'skill', 'contact'],
+        sectionsColor: ['#87b0a5', '#109085', '#945c4c', '#4b85a0', '#4d5e8f', '#a29971'],
+        onLeave: this.onLeave
+      },
+      isLast: true
     }
   },
   components: {
@@ -53,9 +56,49 @@ export default {
     vWorks,
     vSkill,
     vContact
+  },
+  methods: {
+    onLeave (index, nextIndex, direction) {
+      if (nextIndex === 6) {
+        // 最后一个模块
+        this.isLast = false
+      } else if (index === 6 && direction === 'up') {
+        this.isLast = true
+      }
+    }
   }
 }
 </script>
-
 <style>
+  .arrow{
+    position: absolute;
+    bottom: 20px;
+    width: 20px;
+    height: 35px;
+    left: 50%;
+    z-index: 100;
+    background: url(./assets/images/arrow.svg) bottom center no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    transform: translateX(-50%);
+    animation: arrowAnimate 1.5s ease-in-out infinite;
+  }
+  @keyframes arrowAnimate {
+    0% {
+      bottom: 10px;
+      opacity: .8;
+    }
+    50% {
+      bottom: 20px;
+      opacity: 1;
+    }
+    80% {
+      bottom: 22px;
+      opacity: .4;
+    }
+    100% {
+      bottom: 22px;
+      opacity: 0;
+    }
+  }
 </style>
