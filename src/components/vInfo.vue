@@ -1,6 +1,8 @@
 <!--  -->
 <template>
-  <div class="info">关于我</div>
+  <div class="info">
+    <h1 class="main-title">关于我</h1>
+  </div>
 </template>
 
 <script>
@@ -10,7 +12,4 @@ export default {
 
 </script>
 <style scoped>
-.info{
-  background: #109085;
-}
 </style>

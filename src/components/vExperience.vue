@@ -1,6 +1,8 @@
 <!--  -->
 <template>
-  <div class="experience">经历</div>
+  <div class="experience">
+    <h1 class="main-title">经历</h1>
+  </div>
 </template>
 
 <script>
