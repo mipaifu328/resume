@@ -1,17 +1,20 @@
 <!--  -->
 <template>
   <div class="work">
-    <h1>作品集</h1>
+    <h1 class="main-title">作品集</h1>
     <div class="work-wrapper">
-      <swiper :options="swiperOption">
+      <swiper :options="swiperOption" ref="mySwiper" @slideChange="slideChange">
         <swiper-slide v-for="slide in swiperSlides" :key="slide.index">
           <a class="work-items" :href="slide.url">
             <div class="work-title">{{slide.title}}</div>
             <img :src="slide.imgUrl"/>
           </a>
         </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+        <div class="swiper-pagination" slot="pagination"> </div>
       </swiper>
+    </div>
+    <div class="works-description">
+      <p>{{currentWorkDescription}}</p>
     </div>
   </div>
 </template>
@@ -20,6 +23,10 @@
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
+  components: {
+    swiper,
+    swiperSlide
+  },
   data () {
     return {
       swiperOption: {
@@ -31,45 +38,73 @@ export default {
           index: 1,
           title: 'VUE防酷狗音乐1',
           url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img1.png'
+          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img1.png',
+          description: '描述信息1'
         }, {
           index: 2,
           title: 'VUE防酷狗音乐2',
           url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img2.png'
+          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img2.png',
+          description: '描述信息2'
         }, {
           index: 3,
           title: 'VUE防酷狗音乐3',
           url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img3.png'
+          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img3.png',
+          description: '描述信息3'
         }, {
           index: 4,
           title: 'VUE防酷狗音乐4',
           url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img4.png'
+          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img4.png',
+          description: '描述信息4'
         }, {
           index: 5,
           title: 'VUE防酷狗音乐5',
           url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img5.png'
+          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img5.png',
+          description: '描述信息5'
         }
-      ]
+      ],
+      activeIndex: 1
     }
   },
-  components: {
-    swiper,
-    swiperSlide
+  computed: {
+    currentWorkDescription () {
+      return this.swiperSlides[this.activeIndex - 1].description
+    },
+    swiper () {
+      // 通过refs获取swiper对象
+      return this.$refs.mySwiper.swiper
+    }
+  },
+  methods: {
+    slideChange: function () {
+      let activeIndex = this.swiper.activeIndex
+      // 超出长度设置为1，loop循环时activeIndex最后一个会变成length+1
+      if (activeIndex <= this.swiperSlides.length) {
+        this.activeIndex = activeIndex
+      } else {
+        this.activeIndex = 1
+      }
+    }
   }
 }
 
 </script>
 <style scoped>
-  .work h1{
-    font-size: 18px;
+  .work{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
   }
+  .work .main-title{
+    top: 20px;
+  }
   .work-wrapper{
-    margin: 20px auto;
+    display: inline-block;
+    margin: 20px;
     width: 320px;
     height: 568px;
     user-select: none;
@@ -91,9 +126,23 @@ export default {
   .work-wrapper img{
     width: 100%;
   }
-
-  @media screen and (max-width: 500px){
+  .works-description{
+    display: inline-block;
+    width: 50%;
+    margin-left:100px;
+    height: 568px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+  }
+  @media screen and (max-width: 960px) and (min-width: 768px){
+    .works-description{
+      width:320px;
+      margin-left:40px;
+    }
+  }
+  @media screen and (max-width: 768px){
     .work-wrapper{
+      display: block;
       margin: 10vh auto;
       width: 60vw;
       height: 60vh;
@@ -111,6 +160,9 @@ export default {
       line-height: 30px;
       font-size: 12px;
       text-indent: 1em;
+    }
+    .works-description{
+      display: none;
     }
   }
 </style>
