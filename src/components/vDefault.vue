@@ -42,6 +42,7 @@ export default {
     height: 150px;
     border-radius: 50%;
     background: url(../assets/images/mipaifu328.jpg) center center no-repeat;
+    /* background: url(http://www.mipaifu328.com/img/mipaifu328.jpg) center center no-repeat; */
     background-size: cover;
     transition: box-shadow .5s linear;
   }
@@ -71,9 +72,18 @@ export default {
   }
   .des-list p{
     margin: 24px 0;
-    line-height: 20px;
-    font-size: 18px;
     text-align: center;
     color: #FFF;
+  }
+  @media screen and (max-width: 768px){
+    .default{
+      top:100px;
+    }
+    .motto{
+      font-size: 18px;
+    }
+    .des-list{
+      font-size: 14px;
+    }
   }
 </style>
