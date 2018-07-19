@@ -143,7 +143,7 @@ export default {
   @media screen and (max-width: 768px){
     .work-wrapper{
       display: block;
-      margin: 10vh auto;
+      margin: 6vh auto;
       width: 60vw;
       height: 60vh;
     }
