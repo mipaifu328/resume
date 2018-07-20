@@ -36,16 +36,16 @@ export default {
       swiperSlides: [
         {
           index: 1,
-          title: 'VUE防酷狗音乐1',
-          url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img1.png',
+          title: '个人简历页面',
+          url: 'http://www.mipaifu328.com/resume/dist/',
+          imgUrl: require('../assets/images/works/resume.png'),
           description: '描述信息1'
         }, {
           index: 2,
-          title: 'VUE防酷狗音乐2',
-          url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img2.png',
-          description: '描述信息2'
+          title: '基于bootstrap后台管理界面',
+          url: 'http://www.mipaifu328.com/adminDemo/kindergartenLeaderPC/',
+          imgUrl: require('../assets/images/works/admin-mobile.png'),
+          description: '基于bootstrap后台管理界面'
         }, {
           index: 3,
           title: 'VUE防酷狗音乐3',
