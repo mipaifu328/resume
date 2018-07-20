@@ -23,7 +23,7 @@ li, ul{
 @media screen and (max-width: 768px){
   .main-title{
     position: absolute;
-    top: 5vh;
+    top: 4vh;
     left: 20%;
     right: 20%;
     font-size: 18px;
