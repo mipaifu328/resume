@@ -39,7 +39,7 @@ export default {
           title: '个人简历页面',
           url: 'http://www.mipaifu328.com/resume/dist/',
           imgUrl: require('../assets/images/works/resume.png'),
-          description: '描述信息1'
+          description: '使用vue编写的个人简历页面'
         }, {
           index: 2,
           title: '基于bootstrap后台管理界面',
@@ -49,21 +49,15 @@ export default {
         }, {
           index: 3,
           title: 'VUE防酷狗音乐3',
-          url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img3.png',
-          description: '描述信息3'
+          url: 'https://github.com/mipaifu328/vue-kugou-demo',
+          imgUrl: require('../assets/images/works/kugou.png'),
+          description: '使用vue仿写酷狗音乐，采用vue-cli工具构建,同时使用了vue-router,vuex等技术。'
         }, {
           index: 4,
-          title: 'VUE防酷狗音乐4',
-          url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img4.png',
-          description: '描述信息4'
-        }, {
-          index: 5,
-          title: 'VUE防酷狗音乐5',
-          url: '#',
-          imgUrl: 'https://github.com/mipaifu328/vue-kugou-demo/raw/master/img_md/img5.png',
-          description: '描述信息5'
+          title: '微信小程序-天气查询',
+          url: 'https://github.com/mipaifu328/wx-weather',
+          imgUrl: require('../assets/images/works/wx-weather.png'),
+          description: '微信小程序开发简单的天气查询应用，地理编码、天气数据均来自百度地图开放平台。'
         }
       ],
       activeIndex: 1
