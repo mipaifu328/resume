@@ -86,4 +86,21 @@ export default {
       font-size: 14px;
     }
   }
+  @media screen and (min-width: 1440px){
+    .default{
+      top:250px;
+    }
+    .head-pic{
+      width: 200px;
+      height: 200px;
+    }
+    .motto{
+      padding: 30px 0;
+      font-size: 22px;
+    }
+    .des-list p{
+      margin: 30px 0;
+      font-size: 20px;
+    }
+  }
 </style>

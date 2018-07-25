@@ -142,4 +142,30 @@ export default {
       font-size: 14px;
     }
   }
+  @media screen and (min-width: 1440px){
+    .info-container{
+      top: 300px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .info-list{
+      max-width: 1200px;
+    }
+    .info-list li{
+      width: 150px;
+      margin: 0 20px;
+    }
+    .info-img{
+      width: 120px;
+      height: 120px;
+    }
+    .info-description{
+      text-align: center;
+      line-height: 30px;
+      padding-top: 100px;
+      font-size: 20px;
+      color: #FFF;
+    }
+  }
 </style>

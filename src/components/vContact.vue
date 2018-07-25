@@ -10,7 +10,7 @@
         <p v-for="item in desList2" :key="item">{{item}}</p>
       </div>
       <div class="contact-type">
-        <a v-for="item in typeList" :href="item.url" :key="item.name">
+        <a v-for="item in typeList" :href="item.url" target="_blank" :key="item.name">
           <img :src="item.icon" :alt="item.name">
         </a>
       </div>
@@ -38,6 +38,10 @@ export default {
         name: 'github',
         url: 'https://github.com/mipaifu328/',
         icon: require('../assets/images/s_github.svg')
+      }, {
+        name: 'bilibili',
+        url: 'https://space.bilibili.com/39265533/',
+        icon: require('../assets/images/s_bilibili.png')
       }]
     }
   }
@@ -76,7 +80,7 @@ export default {
     color: #FFFFCC;
   }
   .contact-des2{
-      margin-top: 40px;
+    margin-top: 40px;
     font-size: 18px;
     color: #fff;
     text-align: center;
@@ -115,5 +119,28 @@ export default {
     top: 50%;
     right: 50%;
     transform: translateX(50%) translateY(-50%);
+  }
+
+  @media screen and (min-width: 1440px){
+    .contact-container{
+      max-width: 400px;
+    }
+    .contact-des1{
+      margin: 0 auto;
+      margin-top: 100px;
+      font-size: 28px;
+    }
+    .contact-des2{
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .contact-type a{
+      position: relative;
+      margin: 0 20px;
+      width: 50px;
+      height: 50px;
+      border: 1px solid #FFF;
+      border-radius: 50%;
+    }
   }
 </style>

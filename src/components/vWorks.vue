@@ -5,7 +5,7 @@
     <div class="work-wrapper">
       <swiper :options="swiperOption" ref="mySwiper" @slideChange="slideChange">
         <swiper-slide v-for="slide in swiperSlides" :key="slide.index">
-          <a class="work-items" :href="slide.url">
+          <a class="work-items" :href="slide.url" target="_blank">
             <div class="work-title">{{slide.title}}</div>
             <img :src="slide.imgUrl"/>
           </a>
@@ -158,5 +158,12 @@ export default {
     .works-description{
       display: none;
     }
+  }
+  @media screen and (min-width: 1440px){
+    /* .work-wrapper,
+    .work-items{
+      width: 414px;
+      height: 736px;
+    } */
   }
 </style>

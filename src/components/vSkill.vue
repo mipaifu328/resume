@@ -237,4 +237,16 @@ export default {
       line-height: 16px;
     }
   }
+  @media screen and (min-width: 1440px){
+    .skill-container{
+      max-width: 1000px;
+    }
+    .skill-circle{
+      transform: scale(1.5, 1.5);
+    }
+    .skill-description{
+      line-height: 30px;
+      font-size: 22px;
+    }
+  }
 </style>

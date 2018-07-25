@@ -5,7 +5,7 @@
     <div class="experience-container">
       <swiper :options="swiperOption">
         <swiper-slide v-for="slide in _swiperSlides" :key="slide.index">
-          <a class="experience-items" :href="slide.url">
+          <a class="experience-items" :href="slide.url" target="_blank">
             <div class="experience-title">{{slide.title}}</div>
             <div class="experience-img" :style="slide.style"/>
             <div class="experience-des">
@@ -147,5 +147,15 @@ export default {
     padding: 0 8px;
     color: #fff;
     background: rgba(0, 0, 0, .6);
+  }
+  @media screen and (min-width: 1440px){
+    .experience-container{
+      margin: 0 auto;
+      max-width: 1400px;
+    }
+    .experience-items{
+      width: 400px;
+      height:500px;
+    }
   }
 </style>
