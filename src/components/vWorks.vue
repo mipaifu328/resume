@@ -159,7 +159,7 @@ export default {
       display: none;
     }
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     /* .work-wrapper,
     .work-items{
       width: 414px;

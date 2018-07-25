@@ -142,7 +142,7 @@ export default {
       font-size: 14px;
     }
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     .info-container{
       top: 300px;
       left: 0;

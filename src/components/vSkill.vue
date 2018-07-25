@@ -237,7 +237,7 @@ export default {
       line-height: 16px;
     }
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     .skill-container{
       max-width: 1000px;
     }

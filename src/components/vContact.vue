@@ -50,11 +50,6 @@ export default {
 
 <style scoped>
   .contact-container{
-    position: absolute;
-    top: 200px;
-    left: 0;
-    right: 0;
-    bottom: 0;
     max-width: 300px;
     margin: 0 auto;
     text-align: center;
@@ -121,7 +116,7 @@ export default {
     transform: translateX(50%) translateY(-50%);
   }
 
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     .contact-container{
       max-width: 400px;
     }

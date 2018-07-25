@@ -86,7 +86,7 @@ export default {
       font-size: 14px;
     }
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     .default{
       top:250px;
     }

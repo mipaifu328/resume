@@ -148,7 +148,7 @@ export default {
     color: #fff;
     background: rgba(0, 0, 0, .6);
   }
-  @media screen and (min-width: 1440px){
+  @media screen and (min-width: 1500px){
     .experience-container{
       margin: 0 auto;
       max-width: 1400px;
