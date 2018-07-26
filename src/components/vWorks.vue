@@ -2,20 +2,29 @@
 <template>
   <div class="work">
     <h1 class="main-title">作品集</h1>
-    <div class="work-wrapper">
+    <div class="work-mobile" v-if="isMobile">
       <swiper :options="swiperOption" ref="mySwiper" @slideChange="slideChange">
         <swiper-slide v-for="slide in swiperSlides" :key="slide.index">
           <a class="work-items" :href="slide.url" target="_blank">
             <div class="work-title">{{slide.title}}</div>
-            <img :src="slide.imgUrl"/>
+            <img :src="slide.imgUrl">
           </a>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"> </div>
       </swiper>
     </div>
-    <div class="works-description">
-      <p>{{currentWorkDescription}}</p>
-    </div>
+    <ul class="works-pc" v-if="!isMobile">
+      <li class="work-items" v-for="slide in swiperSlides" :key="slide.index">
+        <a :href="slide.url" target="_blank">
+          <img :src="slide.imgUrl">
+          <div class="work-items-txt">
+            <h2 class="work-title">{{slide.title}}</h2>
+            <p>{{slide.description}}</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <a class="more" href="https://github.com/mipaifu328/" target="_blank">github上面查看更多</a>
   </div>
 </template>
 
@@ -60,28 +69,44 @@ export default {
           description: '微信小程序开发简单的天气查询应用，地理编码、天气数据均来自百度地图开放平台。'
         }
       ],
-      activeIndex: 1
+      activeIndex: 1,
+      isMobile: false
     }
   },
   computed: {
-    currentWorkDescription () {
-      return this.swiperSlides[this.activeIndex - 1].description
-    },
-    swiper () {
-      // 通过refs获取swiper对象
-      return this.$refs.mySwiper.swiper
-    }
+    // currentWorkDescription () {
+    //   return this.swiperSlides[this.activeIndex - 1].description
+    // },
+    // swiper () {
+    //   // 通过refs获取swiper对象
+    //   return this.$refs.mySwiper.swiper
+    // }
   },
   methods: {
-    slideChange: function () {
-      let activeIndex = this.swiper.activeIndex
-      // 超出长度设置为1，loop循环时activeIndex最后一个会变成length+1
-      if (activeIndex <= this.swiperSlides.length) {
-        this.activeIndex = activeIndex
-      } else {
-        this.activeIndex = 1
-      }
+    // slideChange: function () {
+    //   let activeIndex = this.swiper.activeIndex
+    //   // 超出长度设置为1，loop循环时activeIndex最后一个会变成length+1
+    //   if (activeIndex <= this.swiperSlides.length) {
+    //     this.activeIndex = activeIndex
+    //   } else {
+    //     this.activeIndex = 1
+    //   }
+    // },
+    checkIsMobile: function () {
+      let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+      this.isMobile = width <= 768
     }
+  },
+  mounted () {
+    // let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    // this.isMobile = width <= 768
+    // window.onresize = () => {
+    //   // 这里如果不是用箭头函数的话，this指向的不是vue实例，而是window
+    //   let width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+    //   this.isMobile = width <= 768
+    // }
+    this.checkIsMobile()
+    window.onresize = this.checkIsMobile
   }
 }
 
@@ -96,74 +121,113 @@ export default {
   .work .main-title{
     top: 20px;
   }
-  .work-wrapper{
-    display: inline-block;
-    margin: 20px;
-    width: 320px;
-    height: 568px;
+  .work-mobile{
+    display: block;
+    margin: 6vh auto;
+    width: 60vw;
+    height: 60vh;
     user-select: none;
   }
-  .work-items{
+  .work-mobile .work-items{
     display:block;
-    width: 320px;
-    height: 568px;
+    width: 60vw;
+    height: 60vh;
     overflow: hidden;
   }
-  .work-title{
-    background: #272822;
-    color: #fff;
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
-    text-indent: 1em;
-  }
-  .work-wrapper img{
+  .work-mobile img{
     width: 100%;
   }
-  .works-description{
-    display: inline-block;
-    width: 50%;
-    margin-left:100px;
-    height: 568px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
+  .work-mobile .work-title{
+    background: #272822;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-indent: 1em;
   }
-  @media screen and (max-width: 960px) and (min-width: 768px){
-    .works-description{
-      width:320px;
-      margin-left:40px;
-    }
+  .works-pc{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  @media screen and (max-width: 768px){
-    .work-wrapper{
-      display: block;
-      margin: 6vh auto;
-      width: 60vw;
-      height: 60vh;
-    }
-    .work-items{
-      display:block;
-      width: 60vw;
-      height: 60vh;
-      overflow: hidden;
-    }
-    .work-title{
-      background: #272822;
-      color: #fff;
-      height: 30px;
-      line-height: 30px;
-      font-size: 12px;
-      text-indent: 1em;
-    }
-    .works-description{
-      display: none;
-    }
+  .works-pc .work-items{
+    width: 47%;
+    height:200px;
+    margin-bottom: 50px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+    border-radius: 6px;
+    transition: box-shadow .3s ease;
   }
+  .works-pc .work-items:hover{
+    box-shadow: 0 8px 15px rgba(0,0,0,.2);
+  }
+  .works-pc .work-items a{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .works-pc img{
+    width: 120px;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+  }
+  .works-pc .work-items-txt{
+    flex: 1;
+    padding-left: 10px;
+  }
+  .work-items-txt h2{
+    margin: 0;
+    font-size:20px;
+    color: #566270;
+    text-align: left;
+  }
+  .work-items-txt p{
+    margin-top: 10px;
+    color: #666;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: justify;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+  }
+  .more{
+    margin-top:10px;
+    text-align: center;
+    color: #fff;
+  }
+
   @media screen and (min-width: 1500px){
-    /* .work-wrapper,
-    .work-items{
-      width: 414px;
-      height: 736px;
-    } */
+    .work{
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .works-pc .work-items{
+      height: 260px;
+    }
+    .works-pc .work-items a{
+      padding: 20px;
+    }
+    .works-pc img{
+      width: 150px;
+    }
+    .works-pc .work-items-txt{
+      padding-left: 20px;
+    }
+    .work-items-txt h2{
+      font-size:24px;
+    }
+    .work-items-txt p{
+      font-size: 18px;
+      line-height: 30px;
+    }
   }
 </style>
