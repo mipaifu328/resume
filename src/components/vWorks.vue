@@ -46,13 +46,13 @@ export default {
         {
           index: 1,
           title: '个人简历页面',
-          url: 'http://www.mipaifu328.com/resume/dist/',
+          url: 'https://www.mipaifu328.com/resume/dist/',
           imgUrl: require('../assets/images/works/resume.png'),
           description: '使用vue编写的个人简历页面'
         }, {
           index: 2,
           title: '基于bootstrap后台管理界面',
-          url: 'http://www.mipaifu328.com/adminDemo/kindergartenLeaderPC/',
+          url: 'https://www.mipaifu328.com/adminDemo/kindergartenLeaderPC/',
           imgUrl: require('../assets/images/works/admin-mobile.png'),
           description: '基于bootstrap后台管理界面'
         }, {

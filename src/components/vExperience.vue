@@ -49,7 +49,7 @@ export default {
         {
           index: 1,
           title: '幼儿园应用APP',
-          url: 'http://www.mipaifu328.com/weuiDemo/kindergarten/',
+          url: 'https://www.mipaifu328.com/weuiDemo/kindergarten/',
           imgUrl: require('../assets/images/experience/yey.png'),
           description: '为增强幼儿园家长和老师互动，了解小朋友各项在园教育情况。记录成长印记等功能，项目运行于微信公众号，采用WEUI，HTML5，CSS3, 运用Mock实现前端模拟接口开发。'
         }, {

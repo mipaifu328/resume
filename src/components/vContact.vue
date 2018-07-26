@@ -32,7 +32,7 @@ export default {
       ],
       typeList: [{
         name: 'blog',
-        url: 'http://www.mipaifu328.com/',
+        url: 'https://www.mipaifu328.com/',
         icon: require('../assets/images/s_blog.svg')
       }, {
         name: 'github',
