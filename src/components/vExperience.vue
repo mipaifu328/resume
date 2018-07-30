@@ -51,19 +51,19 @@ export default {
           title: '幼儿园应用APP',
           url: 'https://www.mipaifu328.com/weuiDemo/kindergarten/',
           imgUrl: require('../assets/images/experience/yey.png'),
-          description: '为增强幼儿园家长和老师互动，了解小朋友各项在园教育情况。记录成长印记等功能，项目运行于微信公众号，采用WEUI，HTML5，CSS3, 运用Mock实现前端模拟接口开发。'
+          description: '为增强幼儿园家长和老师互动，了解小朋友各项在园教育情况。记录成长印记等功能。该项目运行于微信公众号，同时拥有对应微信小程序和后台管理系统。主要技术采用weui，H5，css3，zepto，iscroll等技术，运用Mock实现前端模拟接口开发。后台管理系统采用bootstrap编写，页面兼容ie8和多浏览器。'
         }, {
           index: 2,
           title: '广东省交通厅移动办公平台',
           url: '#',
           imgUrl: require('../assets/images/experience/jtt-app.png'),
-          description: '一款为方便交通厅日常移动办公的 App。可以查看处理公文，事务，通知，邮件，设置个人日程，个性化文件柜等功能。采用MUI H5+框架，结合使用原生JS，将H5页面打包成为APP，实现一套代码苹果安卓两端通用。'
+          description: '一款为方便交通厅日常移动办公的 App。可以查看处理公文，事务，通知，邮件，设置个人日程，个性化文件柜等功能。项目采用MUI H5+框架，结合使用原生JS，将H5页面打包成为APP。采用localstorage对文件夹，文件名进行本地存储。使用mui H5+提供的sdk操作IO、Downloader、Camera等，通过接口调用安卓和ios原生方法。页面布局和样式兼容ios和安卓两端。'
         }, {
           index: 3,
           title: '广东省交通运输厅公众网',
           url: 'http://www.gdcd.gov.cn/',
           imgUrl: require('../assets/images/experience/gdcd.jpg'),
-          description: '广东省交通运输厅公众网，页面布局兼容各种浏览器和低版本浏览器。嵌套集成网上订票，客运情况查询，高速路费查询，阳光政务等系统功能。'
+          description: '广东省交通运输厅公众网，页面布局兼容各种浏览器和低版本浏览器。其中嵌套集成网上订票，客运情况查询，高速路费查询，阳光政务等系统功能。同时拥有手机wap版，采用zepto，iscroll实现主要的几个重要栏目的展示。其中还包括制作每年的春运专题页面、投票页面，集合腾讯地图等功能。'
         }, {
           index: 4,
           title: '广东省交通运输厅公众网手机版',
@@ -75,13 +75,13 @@ export default {
           title: '阳光政务等多平台和微信公众号页面',
           url: 'http://ygzw.gdcd.gov.cn/',
           imgUrl: require('../assets/images/experience/ygzw.jpg'),
-          description: '广东省交通厅阳光政务，2016春运专题，2017春运专题，广东省感动交通人物投票等网站'
+          description: '广东省交通厅阳光政务，2016春运专题，2017春运专题，广东省感动交通人物投票等网站。主要负责的网站页面开发和维护工作。根据效果图编写前端页面，采用html，css，js，jQuery，兼容ie8和多浏览器样式问题，与后台数据交互等。同时使用zepto，iscroll开发对应网站微信公众号页面。'
         }, {
           index: 6,
           title: '广东省交通运输厅数字档案',
           url: '#',
           imgUrl: require('../assets/images/experience/archives.png'),
-          description: '广东省交通运输厅数字档案、广东省交通运输厅公文交换系统：采用easyui布局，根据需求优化系统图标，自定义样式表，增加顶部导航并和菜单栏进行联动。附件上传为了兼容ie低版本浏览器，采用Flex实现多附件断点续传功能，运用Flex与java、javascript交互。'
+          description: '广东省交通运输厅数字档案、广东省交通运输厅公文交换系统：对easyui API的使用，同时根据需求优化系统图标，自定义样式表，增加顶部导航并和菜单栏进行联动。在一些特殊的页面采用原生JS和H5进行编写。同时单独开发附件上传功能，为了兼容ie低版本浏览器，采用Flex实现多附件断点续传功能，运用Flex与java、javascript交互。'
         }
       ]
     }

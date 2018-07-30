@@ -45,7 +45,7 @@ export default {
         }, {
           name: 'sass'
         }, {
-          name: 'react'
+          name: 'wx'
         }, {
           name: 'flex'
         }, {
@@ -58,7 +58,7 @@ export default {
         }, {
           name: 'vue'
         }, {
-          name: 'css'
+          name: 'css3'
         }, {
           name: 'es6'
         }
