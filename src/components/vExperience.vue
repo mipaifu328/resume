@@ -97,65 +97,65 @@ export default {
 }
 
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .experience-container{
     margin: 0 auto;
     max-width: 1000px;
-  }
-  .experience-items{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    padding: 20px;
-    width:300px;
-    height:400px;
-    border-radius: 6px;
-    background-color:#fff;
-    box-sizing: border-box;
-    color:#000;
-    overflow: hidden;
-  }
-  .experience-title{
-    background-color: rgba(0, 0, 0, .8);
-    color: #fff;
-    text-align: center;
-    height: 30px;
-    line-height: 30px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 50px;
-  }
-  .experience-img{
-    width: 100%;
-    height: 100%;
-    background-position:top left;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .experience-des{
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    font-size: 14px;
-    line-height: 24px;
-    text-indent: 2em;
-    text-align: justify;
-    padding: 0 8px;
-    color: #fff;
-    background: rgba(0, 0, 0, .6);
+    .experience-items{
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      padding: 20px;
+      width:300px;
+      height:400px;
+      border-radius: 6px;
+      background-color:#fff;
+      box-sizing: border-box;
+      color:#000;
+      overflow: hidden;
+      .experience-title{
+        background-color: rgba(0, 0, 0, .8);
+        color: #fff;
+        text-align: center;
+        height: 30px;
+        line-height: 30px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 50px;
+      }
+      .experience-img{
+        width: 100%;
+        height: 100%;
+        background-position:top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .experience-des{
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        font-size: 14px;
+        line-height: 24px;
+        text-indent: 2em;
+        text-align: justify;
+        padding: 0 8px;
+        color: #fff;
+        background: rgba(0, 0, 0, .6);
+      }
+    }
   }
   @media screen and (min-width: 1500px){
     .experience-container{
       margin: 0 auto;
       max-width: 1400px;
-    }
-    .experience-items{
-      width: 400px;
-      height:500px;
+      .experience-items{
+        width: 400px;
+        height:500px;
+      }
     }
   }
 </style>

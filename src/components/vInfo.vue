@@ -43,55 +43,74 @@
 export default {
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .info-container{
     position: absolute;
     top: 200px;
     left: 0;
     right: 0;
     bottom: 0;
-  }
-  .info-list{
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    font-size: 18px;
-  }
-  .info-list li{
-    width: 100px;
-    margin: 0 20px;
-  }
-  .info-img{
-    width: 90px;
-    height: 90px;
-    cursor: pointer;
-    transition: background .2s,-webkit-transform ease-out .1s;
-    transition: transform ease-out .1s,background .2s;
-    transition: transform ease-out .1s,background .2s,-webkit-transform ease-out .1s;
-    background: rgba(255,255,255,.1);
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto;
-  }
-  .info-img:hover{
-    background: rgba(255,255,255,0.05);
-    transform: scale(0.93);
-    color: #fff;
-  }
-  .info-img::after{
-    content: '';
-    position: absolute;
-    box-shadow: 0 0 0 2px rgba(255,255,255,.1);
-    opacity: 0;
-    transform: scale(.9);
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
-  .info-img:hover:after{
-    animation: effect 1.3s ease-out 75ms;
+    .info-list{
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      font-size: 18px;
+      li{
+        width: 100px;
+        margin: 0 20px;
+        .info-img{
+          width: 90px;
+          height: 90px;
+          cursor: pointer;
+          transition: background .2s,-webkit-transform ease-out .1s;
+          transition: transform ease-out .1s,background .2s;
+          transition: transform ease-out .1s,background .2s,-webkit-transform ease-out .1s;
+          background: rgba(255,255,255,.1);
+          border-radius: 50%;
+          position: relative;
+          margin: 0 auto;
+          &:hover{
+            background: rgba(255,255,255,0.05);
+            transform: scale(0.93);
+            color: #fff;
+          }
+          &::after{
+            content: '';
+            position: absolute;
+            box-shadow: 0 0 0 2px rgba(255,255,255,.1);
+            opacity: 0;
+            transform: scale(.9);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+          &:hover:after{
+            animation: effect 1.3s ease-out 75ms;
+          }
+          img{
+            width: 50%;
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translateY(-50%) translateX(50%);
+          }
+        }
+        .info-txt{
+          text-align: center;
+          margin-top: 20px;
+          color: #FFF;
+        }
+      }
+    }
+    .info-description{
+      text-align: center;
+      line-height: 24px;
+      padding-top: 50px;
+      font-size: 18px;
+      color: #FFF;
+    }
   }
   @keyframes effect {
     0% {
@@ -107,39 +126,24 @@ export default {
       opacity: 0;
     }
   }
-  .info-img img{
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translateY(-50%) translateX(50%);
-  }
-  .info-txt{
-    text-align: center;
-    margin-top: 20px;
-    color: #FFF;
-  }
-  .info-description{
-    text-align: center;
-    line-height: 24px;
-    padding-top: 50px;
-    font-size: 18px;
-    color: #FFF;
-  }
   @media screen and (max-width: 768px){
     .info-container{
       top:100px;
-    }
-    .info-img{
-      width: 50px;
-      height: 50px;
-    }
-    .info-txt{
-      font-size: 12px;
-      margin: 20px 0;
-    }
-    .info-description{
-      font-size: 14px;
+      .info-list{
+        li{
+          .info-img{
+            width: 50px;
+            height: 50px;
+          }
+          .info-txt{
+            font-size: 12px;
+            margin: 20px 0;
+          }
+        }
+        .info-description{
+          font-size: 14px;
+        }
+      }
     }
   }
   @media screen and (min-width: 1500px){
@@ -148,24 +152,24 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-    }
-    .info-list{
-      max-width: 1200px;
-    }
-    .info-list li{
-      width: 150px;
-      margin: 0 20px;
-    }
-    .info-img{
-      width: 120px;
-      height: 120px;
-    }
-    .info-description{
-      text-align: center;
-      line-height: 30px;
-      padding-top: 100px;
-      font-size: 20px;
-      color: #FFF;
+      .info-list{
+        max-width: 1200px;
+        li{
+          width: 150px;
+          margin: 0 20px;
+          .info-img{
+            width: 120px;
+            height: 120px;
+          }
+        }
+      }
+      .info-description{
+        text-align: center;
+        line-height: 30px;
+        padding-top: 100px;
+        font-size: 20px;
+        color: #FFF;
+      }
     }
   }
 </style>
