@@ -26,7 +26,7 @@
           <div class="info-img">
             <img src="../assets/images/i_status.svg" alt="status">
           </div>
-          <div class="info-txt">状态/在职</div>
+          <div class="info-txt">状态/离职</div>
         </li>
       </ul>
       <div class="info-description">
