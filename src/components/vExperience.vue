@@ -47,6 +47,13 @@ export default {
       },
       swiperSlides: [
         {
+          index: 0,
+          title: '南沙位置服务项目',
+          url: '#',
+          imgUrl: require('../assets/images/experience/sharedBikes.png'),
+          description: '南沙位置服务项目主要包括：共享单车监管、智慧养老、平安校园三个项目。拥有各自的PC管理系统和App移动应用系统，主要功能包括大数据统计信息展示，位置服务，轨迹监测，一键报警等功能。该项目主要负责的是APP开发和PC后台管理部分功能开发。APP采用DCloud H5+开发，打包发布版本，负责pc首页动态数据界面展示，通过使用Echarts结合高德地图API实现各项数据不同统计类型展示，3D地图建筑动态标注颜色的人流动数量和趋势。'
+        },
+        {
           index: 1,
           title: '幼儿园应用APP',
           url: 'https://www.mipaifu328.com/weuiDemo/kindergarten/',
